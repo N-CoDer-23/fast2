@@ -1,0 +1,177 @@
+/* Overall container */
+.fast-food-menu {
+  width: 91%;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #222;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px; /* Gap between elements */
+}
+
+/* Menu item */
+.menu-item {
+  background-color: #000000;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px; /* Internal padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  position: relative; /* Position child elements absolutely relative to this container */
+  width: 200px; /* Adjust width as needed */
+}
+
+/* Item details */
+.item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Ensures that item-quantity-display can be positioned relative to this container */
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* Move the item name 1px down */
+.item-name {
+  font-size: 16px;
+  margin-top: 1px; /* Moves the item name 1px down */
+}
+
+/* Move the item price 2px down */
+.item-price {
+  font-size: 14px;
+  color: #bbb;
+  margin-top: 2px; /* Moves the item price 2px down */
+}
+
+/* Image */
+.item-img {
+  width: 75px;
+  height: 75px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.item-img img {
+  border-radius: 8px;
+  max-width: 150%; /* Ensure the image fits within the container */
+  max-height: 150%;
+  object-fit: contain; /* Preserve aspect ratio */
+}
+
+/* Item Quantity Display */
+.item-quantity-display {
+  width: 15px;
+  height: 15px;
+  right: -15px;
+  position: absolute;
+  top: 0;
+  /* background-color: #ff0000; */
+  color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* Buttons */
+.item-add-btn {
+  background-color: #ffc107;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* Added font-size to ensure consistency */
+}
+
+.item-add-btn:hover {
+  background-color: #e0a800;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px; /* Ensure spacing between controls and other elements */
+}
+
+.control-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.control-btn.increment {
+  background-color: #28a745;
+  width: 42px;
+  height: 33px;
+}
+
+.control-btn.decrement {
+  background-color: #dc3545;
+  width: 42px;
+  height: 33px;
+}
+
+.control-btn:hover {
+  opacity: 0.8;
+}
+
+.view-order-btn {
+  width: 300px;
+  height: 50px;
+  background-color: #28a745;
+  border-radius: 8px;
+  border: none;
+  margin-top: 20px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  display: block; /* Ensures button takes up its own space */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+/* Media query for screens smaller than 420px */
+@media (max-width: 420px) {
+  .menu-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns on smaller screens */
+    gap: 10px; /* Reduce gap between elements */
+  }
+  
+  .menu-item {
+    width: 100%; /* Full width */
+    height: auto; /* Automatic height */
+    padding: 10px; /* Maintain padding */
+  }
+
+  .item-name {
+    font-size: 14px; /* Smaller font size */
+  }
+
+  .item-price {
+    font-size: 12px; /* Smaller font size */
+  }
+
+  .view-order-btn {
+    width: 100%; /* Full width */
+    font-size: 24px; /* Smaller font size */
+  }
+}
